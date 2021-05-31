@@ -26,9 +26,9 @@ enum custom_keycodes {
 
 #include "oled.c"
 #include "encoder.c"
-//#include "keymap_est.h"
+#include "keymap_est.h" 
 
-//Default keymap. This can be changed in Via. Use oled.c and encoder.c to change beavior that Via cannot change.
+//Default keymap. Use oled.c and encoder.c to change beavior that VIA cannot change.
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  EE_UDIA, \
   KC_CAPS,   KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L, EE_ODIA,  EE_ADIA, \
   KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_GAMING,     KC_QWERTY,KC_N,    KC_M, KC_COMM,  KC_DOT, EE_MINS,  EE_OTIL, \
-                 KC_LGUI,KC_LALT,KC_LOWER, KC_LCTRL, KC_SPC,      KC_ENT, KC_RAISE, KC_RCTRL, KC_RALT, XXXXXXX \
+                 KC_LGUI,KC_LALT,KC_LOWER, KC_LCTRL, KC_SPC,      KC_ENT, KC_RAISE, KC_RCTRL, KC_RALT, KC_LEAD \
 ),
 
 /*
@@ -77,34 +77,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,   KC_Q,   KC_C,    KC_H,    KC_P,    KC_V,                     KC_K,    KC_Y,    KC_O,    KC_J,    EE_ODIA,  EE_UDIA, \
   KC_CAPS,   KC_R,   KC_S,    KC_N,    KC_T,    KC_G,                     KC_W,    KC_U,    KC_E,    KC_I, KC_A,  EE_ADIA, \
   KC_LSFT,  KC_X,   KC_M,    KC_L,    KC_D,    KC_B, KC_MPLY,     KC_MUTE,KC_Z,    KC_F, KC_COMM,  KC_DOT, EE_MINS,  EE_OTIL, \
-                 KC_LGUI,KC_LALT,KC_LOWER, KC_LCTRL, KC_SPC,      KC_ENT,  KC_RAISE, KC_RCTRL, KC_RALT, XXXXXXX \
+                 KC_LGUI,KC_LALT,KC_LOWER, KC_LCTRL, KC_SPC,      KC_ENT,  KC_RAISE, KC_RCTRL, KC_RALT, KC_LEAD \
 ),
 
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |                    |  F7  |  F8  |  F9  | F10  | F11  | F12  |
+ * |   ~  |   !  |   "  |   #  |   ¤  |   %  |                    |   &  |  /   |  (   |   )  |  =   |  ?   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Tab  |   !  |   "  |   #  |   ¤  |   %  |                    |   &  |  /   |  (   |   )  |  =   |  ?   | 
+ * | Tab  |      |   '  |      |   £  |      |                    |   @  |  \   |  {   |   }  |  *   |      | 
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Caps | PWrd |  Up  | NWrd |      |      |-------.    ,-------|  Ins |  <   |  {   |   }  | Home |  PUp |
+ * | Caps |      |   ^  |      |   $  |   ´  |-------.    ,-------|      |  |   |  [   |   ]  |  +   |      |
  * |------+------+------+------+------+------|  play |    | mute  |------+------+------+------+------+------|
- * | Shift| Left | Down | Rigth|      | PrScr|-------|    |-------|  Del |  '   |  [   |   ]  |  End |PDown |
+ * | Shift|      |   ˇ  |      |   €  |   `  |-------|    |-------|      |      |  <   |   >  |  -   |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            |MACWIN| RAlt | LOWER| RCTR | /Enter  /       \Space \  |RAISE | RCTR | RAlt |      |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
 [_LOWER] = LAYOUT( \
-    KC_F1,    KC_F2,   KC_F3,    KC_F4,   KC_F5,   KC_F6,                            KC_F7,   KC_F8,   KC_F9,    KC_F10,  KC_F11,  KC_F12, \
-  _______,  EE_EXLM, EE_DQUO,  EE_HASH, EE_CURR, EE_PERC,                          EE_AMPR, EE_SLSH, EE_LPRN,   EE_RPRN,  EE_EQL,  EE_QUES, \
-  _______, KC_PRVWD,   KC_UP, KC_NXTWD, XXXXXXX, XXXXXXX,                           KC_INS, EE_LABK, EE_LCBR,   EE_RCBR, KC_HOME,  KC_PGUP, \
-  _______,  KC_LEFT, KC_DOWN,  KC_RGHT, XXXXXXX, KC_PSCR, _______,         _______, KC_DEL, EE_QUOT, EE_LBRC,   EE_RBRC,  KC_END,  KC_PGDN, \
+  EE_TILD,  EE_EXLM, EE_DQUO,  EE_HASH, EE_CURR, EE_PERC,                          EE_AMPR, EE_SLSH, EE_LPRN,   EE_RPRN,  EE_EQL,  EE_QUES, \
+  _______,  XXXXXXX,   EE_QUOT, XXXXXXX, EE_PND, XXXXXXX,                          EE_AT, EE_BSLS, EE_LCBR,   EE_RCBR,  EE_ASTR,  XXXXXXX, \
+  _______,  XXXXXXX, EE_CIRC, XXXXXXX, EE_DLR, EE_ACUT,                           XXXXXXX, EE_PIPE, EE_LBRC,   EE_RBRC, EE_PLUS,  XXXXXXX, \
+  _______,  XXXXXXX, EE_CARN,  XXXXXXX, EE_EURO, EE_GRV, _______,         _______, XXXXXXX, XXXXXXX, EE_LABK,   EE_RABK,  EE_MINS,  XXXXXXX, \
                     _______, _______, _______, _______, _______,       _______, _______, _______, _______,  _______ \
 ),
 
 /* RAISE
  * ,----------------------------------------.                    ,-----------------------------------------.
- * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
+ * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |                    |  F7  |  F8  |  F9  | F10  | F11  | F12  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Esc  | Ins  | Pscr | Menu |      |      |                    |      | PWrd |  Up  | NWrd | DLine| Bspc |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            `----------------------------------'           '------''---------------------------'
  */
 [_RAISE] = LAYOUT( \
-  _______, _______ , _______ , _______ , _______ , _______,                           _______,  _______  , _______,  _______ ,  _______ ,_______, \
+    KC_F1,    KC_F2,   KC_F3,    KC_F4,   KC_F5,   KC_F6,                            KC_F7,   KC_F8,   KC_F9,    KC_F10,  KC_F11,  KC_F12, \
   _______,  KC_INS,  KC_PSCR,   KC_APP,  XXXXXXX, XXXXXXX,                        KC_PGUP, KC_PRVWD,   KC_UP, KC_NXTWD,KC_DLINE, KC_BSPC, \
   _______, KC_LALT,  KC_LCTL,  KC_LSFT,  XXXXXXX, KC_CAPS,                       KC_PGDN,  KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL, KC_BSPC, \
   _______,KC_UNDO, KC_CUT, KC_COPY, KC_PASTE, XXXXXXX,  _______,       _______,  XXXXXXX, KC_LSTRT, XXXXXXX, KC_LEND,   _______, _______, \
@@ -374,4 +374,30 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         
     }
     return true;
+}
+
+LEADER_EXTERNS();
+
+void matrix_scan_user(void) {
+  LEADER_DICTIONARY() {
+    leading = false;
+    leader_end();
+
+    SEQ_ONE_KEY(KC_Q) {
+      // Anything you can do in a macro.
+      SEND_STRING("QMK is awesome.");
+    }
+    SEQ_TWO_KEYS(KC_D, KC_D) {
+      SEND_STRING(SS_LCTL("a") SS_LCTL("c"));
+    }
+    SEQ_THREE_KEYS(KC_D, KC_D, KC_S) {
+      SEND_STRING("https://start.duckduckgo.com\n");
+    }
+    SEQ_TWO_KEYS(KC_A, KC_S) {
+      register_code(KC_LGUI);
+      register_code(KC_S);
+      unregister_code(KC_S);
+      unregister_code(KC_LGUI);
+    }
+  }
 }
