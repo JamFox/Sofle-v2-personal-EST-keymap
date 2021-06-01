@@ -34,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  * QWERTY 
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * | Esc  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  BS  |
+ * | Esc  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | LEAD |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Tab  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  Ü   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -42,24 +42,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  play |    | mute  |------+------+------+------+------+------|
  * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   -  |  Õ   |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LOWER| LCTR | /Space  /       \Enter \  |RAISE | RCTR | RAlt |      |
+ *            | LGUI | LAlt | LOWER| LCTR | /Space  /       \Bspc  \  |RAISE | RAISE| RAlt |LEAD  |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
 
 [_QWERTY] = LAYOUT( \
-  KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_BSPC_DEL, \
+  KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_LEAD, \
   KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  EE_UDIA, \
   KC_CAPS,   KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L, EE_ODIA,  EE_ADIA, \
   KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_GAMING,     KC_QWERTY,KC_N,    KC_M, KC_COMM,  KC_DOT, EE_MINS,  EE_OTIL, \
-                 KC_LGUI,KC_LALT,KC_LOWER, KC_LCTRL, KC_SPC,      KC_ENT, KC_RAISE, KC_RCTRL, KC_RALT, KC_LEAD \
+                 KC_LGUI,KC_LALT,KC_LOWER, KC_LCTRL, KC_SPC,      KC_BSPC_DEL,  KC_ENT, KC_RAISE, KC_RALT, KC_LEAD \
 ),
 
 /*
  * GAMING (Hands Down https://sites.google.com/alanreiser.com/handsdown) 
  * NB! "GAMING" is just an old varname, it has nothing to do with gaming in actuality 
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * | Esc  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  BS  |
+ * | Esc  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | LEAD |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Tab  |   Q  |   C  |   H  |   P  |   V  |                    |   K  |   Y  |   O  |   J  |   Ö  |  Ü   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -67,37 +67,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  play |    | mute  |------+------+------+------+------+------|
  * |LShift|   X  |   M  |   L  |   D  |   B  |-------|    |-------|   Z  |   F  |   ,  | .    | -    |  Õ   |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LOWER| LCTR | /Space  /       \Enter \  |RAISE | RCTR | RAlt |      |
+ *            | LGUI | LAlt | LOWER| LCTR | /Space  /       \Bspc  \  |ENTER | RAISE| RAlt |LEAD  |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
 
 [_GAMING] = LAYOUT( \
-  KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_BSPC_DEL, \
+  KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_LEAD, \
   KC_TAB,   KC_Q,   KC_C,    KC_H,    KC_P,    KC_V,                     KC_K,    KC_Y,    KC_O,    KC_J,    EE_ODIA,  EE_UDIA, \
   KC_CAPS,   KC_R,   KC_S,    KC_N,    KC_T,    KC_G,                     KC_W,    KC_U,    KC_E,    KC_I, KC_A,  EE_ADIA, \
   KC_LSFT,  KC_X,   KC_M,    KC_L,    KC_D,    KC_B, KC_MPLY,     KC_MUTE,KC_Z,    KC_F, KC_COMM,  KC_DOT, EE_MINS,  EE_OTIL, \
-                 KC_LGUI,KC_LALT,KC_LOWER, KC_LCTRL, KC_SPC,      KC_ENT,  KC_RAISE, KC_RCTRL, KC_RALT, KC_LEAD \
+                 KC_LGUI,KC_LALT,KC_LOWER, KC_LCTRL, KC_SPC,      KC_BSPC_DEL,  KC_ENT, KC_RAISE, KC_RALT, KC_LEAD \
 ),
 
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |   ~  |   !  |   "  |   #  |   ¤  |   %  |                    |   &  |  /   |  (   |   )  |  =   |  ?   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Tab  |      |   '  |      |   £  |      |                    |   @  |  \   |  {   |   }  |  *   |      | 
+ * | Tab  |      |   '  |  .   |   £  |      |                    |   @  |  \   |  {   |   }  |  *   |      | 
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Caps |      |   ^  |      |   $  |   ´  |-------.    ,-------|      |  |   |  [   |   ]  |  +   |      |
+ * | Caps |      |   ^  |  ,   |   $  |   ´  |-------.    ,-------|      |  |   |  [   |   ]  |  +   |      |
  * |------+------+------+------+------+------|  play |    | mute  |------+------+------+------+------+------|
  * | Shift|      |   ˇ  |      |   €  |   `  |-------|    |-------|      |      |  <   |   >  |  -   |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            |MACWIN| RAlt | LOWER| RCTR | /Enter  /       \Space \  |RAISE | RCTR | RAlt |      |
+ *            |MACWIN| LAlt | LOWER| RCTR | /Space  /       \Bspc  \  |ENTER | RAISE| RAlt |LEAD  |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
 [_LOWER] = LAYOUT( \
   EE_TILD,  EE_EXLM, EE_DQUO,  EE_HASH, EE_CURR, EE_PERC,                          EE_AMPR, EE_SLSH, EE_LPRN,   EE_RPRN,  EE_EQL,  EE_QUES, \
-  _______,  XXXXXXX,   EE_QUOT, XXXXXXX, EE_PND, XXXXXXX,                          EE_AT, EE_BSLS, EE_LCBR,   EE_RCBR,  EE_ASTR,  XXXXXXX, \
-  _______,  XXXXXXX, EE_CIRC, XXXXXXX, EE_DLR, EE_ACUT,                           XXXXXXX, EE_PIPE, EE_LBRC,   EE_RBRC, EE_PLUS,  XXXXXXX, \
+  _______,  XXXXXXX,   EE_QUOT, KC_DOT, EE_PND, XXXXXXX,                          EE_AT, EE_BSLS, EE_LCBR,   EE_RCBR,  EE_ASTR,  XXXXXXX, \
+  _______,  XXXXXXX, EE_CIRC,  KC_COMM, EE_DLR, EE_ACUT,                           XXXXXXX, EE_PIPE, EE_LBRC,   EE_RBRC, EE_PLUS,  XXXXXXX, \
   _______,  XXXXXXX, EE_CARN,  XXXXXXX, EE_EURO, EE_GRV, _______,         _______, XXXXXXX, XXXXXXX, EE_LABK,   EE_RABK,  EE_MINS,  XXXXXXX, \
                     _______, _______, _______, _______, _______,       _______, _______, _______, _______,  _______ \
 ),
@@ -106,9 +106,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,----------------------------------------.                    ,-----------------------------------------.
  * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |                    |  F7  |  F8  |  F9  | F10  | F11  | F12  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Esc  | Ins  | Pscr | Menu |      |      |                    |      | PWrd |  Up  | NWrd | DLine| Bspc |
+ * | Esc  | Ins  | Pscr | Menu |      |      |                    |      | PWrd |  Up  | NWrd | DLine| Home |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Tab  | LAt  | LCtl |LShift|      | Caps |-------.    ,-------|      | Left | Down | Rigth|  Del | Bspc |
+ * | Tab  | LAt  | LCtl |LShift|      | Caps |-------.    ,-------|      | Left | Down | Rigth|  Del | End  |
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
  * |Shift | Undo |  Cut | Copy | Paste|      |-------|    |-------|      | LStr |      | LEnd |      | Shift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -118,8 +118,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_RAISE] = LAYOUT( \
     KC_F1,    KC_F2,   KC_F3,    KC_F4,   KC_F5,   KC_F6,                            KC_F7,   KC_F8,   KC_F9,    KC_F10,  KC_F11,  KC_F12, \
-  _______,  KC_INS,  KC_PSCR,   KC_APP,  XXXXXXX, XXXXXXX,                        KC_PGUP, KC_PRVWD,   KC_UP, KC_NXTWD,KC_DLINE, KC_BSPC, \
-  _______, KC_LALT,  KC_LCTL,  KC_LSFT,  XXXXXXX, KC_CAPS,                       KC_PGDN,  KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL, KC_BSPC, \
+  _______,  KC_INS,  KC_PSCR,   KC_APP,  XXXXXXX, XXXXXXX,                        KC_PGUP, KC_PRVWD,   KC_UP, KC_NXTWD,KC_DLINE, KC_HOME, \
+  _______, KC_LALT,  KC_LCTL,  KC_LSFT,  XXXXXXX, KC_CAPS,                       KC_PGDN,  KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL, KC_END, \
   _______,KC_UNDO, KC_CUT, KC_COPY, KC_PASTE, XXXXXXX,  _______,       _______,  XXXXXXX, KC_LSTRT, XXXXXXX, KC_LEND,   _______, _______, \
                          _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______ \
 ),
@@ -383,21 +383,39 @@ void matrix_scan_user(void) {
     leading = false;
     leader_end();
 
-    SEQ_ONE_KEY(KC_Q) {
-      // Anything you can do in a macro.
-      SEND_STRING("QMK is awesome.");
+    SEQ_TWO_KEYS(KC_G, KC_P) {
+      SEND_STRING("git push origin ");
     }
-    SEQ_TWO_KEYS(KC_D, KC_D) {
-      SEND_STRING(SS_LCTL("a") SS_LCTL("c"));
+    SEQ_TWO_KEYS(KC_G, KC_S) {
+      SEND_STRING("git status\n");
     }
-    SEQ_THREE_KEYS(KC_D, KC_D, KC_S) {
-      SEND_STRING("https://start.duckduckgo.com\n");
+    SEQ_THREE_KEYS(KC_G, KC_C, KC_I) {
+      SEND_STRING("git commit\n");
     }
-    SEQ_TWO_KEYS(KC_A, KC_S) {
-      register_code(KC_LGUI);
-      register_code(KC_S);
-      unregister_code(KC_S);
-      unregister_code(KC_LGUI);
+    SEQ_TWO_KEYS(KC_G, KC_A) {
+      SEND_STRING("git add .\n");
+    }
+    SEQ_THREE_KEYS(KC_G, KC_C, KC_O) {
+      SEND_STRING("git checkout ");
+    }
+    SEQ_THREE_KEYS(KC_S, KC_T, KC_L) {
+      SEND_STRING("systemctl ");
+    }
+    SEQ_ONE_KEY(KC_O) {
+      register_code(EE_ODIA);
+      unregister_code(EE_ODIA);
+    }
+    SEQ_TWO_KEYS(KC_O, KC_O) {
+      register_code(EE_OTIL);
+      unregister_code(EE_OTIL);
+    }
+    SEQ_ONE_KEY(KC_A) {
+      register_code(EE_ADIA);
+      unregister_code(EE_ADIA);
+    }
+    SEQ_ONE_KEY(KC_U) {
+      register_code(EE_UDIA);
+      unregister_code(EE_UDIA);
     }
   }
 }
