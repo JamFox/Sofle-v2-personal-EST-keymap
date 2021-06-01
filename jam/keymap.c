@@ -34,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  * QWERTY 
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * | Esc  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | LEAD |
+ * | Esc  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | ENTER|
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Tab  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  Ü   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_QWERTY] = LAYOUT( \
-  KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_LEAD, \
+  KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_ENT, \
   KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  EE_UDIA, \
   KC_CAPS,   KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L, EE_ODIA,  EE_ADIA, \
   KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_GAMING,     KC_QWERTY,KC_N,    KC_M, KC_COMM,  KC_DOT, EE_MINS,  EE_OTIL, \
@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * GAMING (Hands Down https://sites.google.com/alanreiser.com/handsdown) 
  * NB! "GAMING" is just an old varname, it has nothing to do with gaming in actuality 
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * | Esc  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | LEAD |
+ * | Esc  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | ENTER|
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Tab  |   Q  |   C  |   H  |   P  |   V  |                    |   K  |   Y  |   O  |   J  |   Ö  |  Ü   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -73,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_GAMING] = LAYOUT( \
-  KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_LEAD, \
+  KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_ENT, \
   KC_TAB,   KC_Q,   KC_C,    KC_H,    KC_P,    KC_V,                     KC_K,    KC_Y,    KC_O,    KC_J,    EE_ODIA,  EE_UDIA, \
   KC_CAPS,   KC_R,   KC_S,    KC_N,    KC_T,    KC_G,                     KC_W,    KC_U,    KC_E,    KC_I, KC_A,  EE_ADIA, \
   KC_LSFT,  KC_X,   KC_M,    KC_L,    KC_D,    KC_B, KC_MPLY,     KC_MUTE,KC_Z,    KC_F, KC_COMM,  KC_DOT, EE_MINS,  EE_OTIL, \
